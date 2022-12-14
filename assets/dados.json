@@ -1,0 +1,16 @@
+{
+  "produtos": [
+    {
+      "id": 3,
+      "produto": "Macarrão",
+      "status": false,
+      "quant": "20"
+    },
+    {
+      "produto": "Coca Cola",
+      "status": false,
+      "quant": "2 litros",
+      "id": 5
+    }
+  ]
+}

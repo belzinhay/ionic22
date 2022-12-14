@@ -1,0 +1,51 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark" mode="ios">
+    <ion-title>
+      Shopping List
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+ 
+  <ion-img [src]="img"></ion-img>
+
+<ion-list>
+<ion-item-sliding *ngFor= "let item of armario">
+
+  <ion-item (click)="actionMetod()">
+    <!--Bolinha Branca-->
+    <ion-icon name="radio-button-off" *ngIf="!item.status"></ion-icon>
+    <ion-label *ngIf="!item.status"><strong>Produto:</strong> {{item.produto}} </ion-label>
+    <ion-label *ngIf="!item.status"><strong>Quant:</strong> {{item.quant}} </ion-label>
+  
+  <!--Bolinha Verde-->
+  <ion-icon name="checkmark-circle" color="sucess" *ngIf="item.status"></ion-icon>
+  <ion-label *ngIf="item.status"><del><strong>Produto:</strong> {{item.produto}} </del></ion-label>
+  <ion-label *ngIf="item.status"><del><strong>Quant:</strong> {{item.quant}} </del></ion-label>
+</ion-item>
+
+<ion-item-options>
+  <ion-item-option color="danger" (click)="deletar(item.id)">
+    <ion-icon name="trash-outline"></ion-icon>
+  </ion-item-option>
+
+  <ion-item-option color="sucess">
+    <ion-icon name="refresh-outline"></ion-icon>
+  </ion-item-option>
+
+</ion-item-options>
+</ion-item-sliding>
+
+
+
+</ion-list>
+
+<!--Botão Flutuante-->
+<ion-fab horizontal="end" vertical="bottom">
+  <ion-fab-button (click)="alertando()">
+    <ion-icon name="add-outline"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+</ion-content>
+
